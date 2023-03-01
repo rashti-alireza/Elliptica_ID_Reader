@@ -1,73 +1,67 @@
-# Makefile for Elliptica
+##################################
+## Elliptica ID reader Makefile ##
+##################################
+
+## lib name
+LIBNAME = elliptica_id_reader
+
+## compiler settings
+CC = gcc
+
+CFLAGS = -std=c99 -fPIC -pedantic
+CFLAGS += -fopenmp
+#CFLAGS += -O3
+
+## ---------------------------------------------------------------------- ##
+## ---------------------------------------------------------------------- ##
 
 BASE=$(shell /bin/pwd)
 SRCD=$(BASE)/src
-##INCD=$(BASE)/include
-INCD=$(BASE)/src
+INCD=$(BASE)/include
 OBJD=$(BASE)/obj
 LIBD=$(BASE)/lib
 
-
-NAME=EllipticaRun
-LIBNAME=elliptica_id_reader
-EXE=$(NAME).x
 SRC=$(wildcard $(SRCD)/*.c)
 OBJ=$(patsubst $(SRCD)/%.c,$(OBJD)/%.o,$(SRC))
-INC=$(wildcard $(INCD)/*.c)
-INC_PARAMS=$(foreach d, $(INCD), -I$d)
-
-OBJ2=$(wildcard $(OBJD)/*.o)
+INC_PARAMS=-I$(SRCD)
 LIB=$(LIBD)/lib$(LIBNAME).so
 
-
-# mandatory flags
-
-CC = gcc
-LD = ld
+## archive cmd
 AR = ar
 
-CFLAGS = -std=c99 -fPIC -pedantic
-CFLAGS+= -I/usr/include/suitesparse
-LDLFLAGS=-lumfpack -lm
-
-#CFLAGS += -O3
-CFLAGS += -g
+.PHONY: all clean
 
 all: $(LIB)
-	@echo "All done"
-
-$(EXE): $(OBJ)
-	@echo "Building $@ ..."
-	@echo
-
-	$(CC) $(CFLAGS) $(LFLAGS) $(OBJ) -o $@ $(LDLFLAGS)
-        
-#	# this doesn't need to be a shared object
-#	@rm $(OBJD)/EllipticaRun.o > /dev/null 2>&1
+	@echo '---'
+	@echo "'$(LIBNAME)' library made successfully :)"
+	@echo '---'
 
 $(OBJD)/%.o: $(SRCD)/%.c
-	@echo "Building objects ..."
-	@echo
-
 	@mkdir -p $(dir $@)
-#	@echo "Compiling $< ... -> $@"
 	$(CC) $(CFLAGS) $(INC_PARAMS) -c $< -o $@
 
 $(LIB): $(OBJ)
-	@echo "Making libraries... "
-	@echo
+	@echo '---'
+	@echo "Making libraries ... "
+	@echo '---'
 
 	@mkdir -p $(LIBD)
+	
+## shared lib
 	$(CC) $(CFLAGS) -shared $(OBJ) -o $(LIBD)/lib$(LIBNAME).so
 
-	$(AR) rcs $(LIBD)/libElliptica.a $(OBJ)
-#	$(AR) rcs $(LIBD)/libElliptica_static.a $@ $^
+## static lib
+	$(AR) rcs $(LIBD)/lib$(LIBNAME).a $(OBJ)
 
+## cp header
+	@mkdir -p $(INCD)
+	@cp -u $(SRCD)/elliptica_id_reader_lib.h $(INCD)
+	
 clean:
-	@echo "Cleaning ..."
+	@echo '---'
+	@echo "Removing ..."
 	@rm -rf $(OBJD)
 	@rm -rf $(LIBD)
-	@rm -rf $(EXE)
-	@echo "... done"
-
-.PHONY: all clean
+	@rm -rf $(INCD)
+	@echo "Done!"
+	@echo '---'
