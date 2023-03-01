@@ -1,3 +1,6 @@
+## ignore them!
+
 /lib
 /obj
-/src
+/include
+
