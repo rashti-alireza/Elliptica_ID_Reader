@@ -8,9 +8,9 @@ LIBNAME = elliptica_id_reader
 ## compiler settings
 CC = gcc
 
-CFLAGS = -std=c99 -fPIC -pedantic
 CFLAGS += -fopenmp
-#CFLAGS += -O3
+CFLAGS += -std=c99 -fPIC -pedantic
+CFLAGS += -O3
 
 ## ---------------------------------------------------------------------- ##
 ## ---------------------------------------------------------------------- ##
