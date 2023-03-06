@@ -4,6 +4,7 @@ This repository is a stand-alone library and provides an interface for an evolut
 read the initial data of *Elliptica*.
 
 Requirements:
+- The GNU make tool.
 - A C programming compiler, for instance, `gcc`.
 - A compatible `openmp` library with the compiler.
 
@@ -11,7 +12,7 @@ Usage:
 1. We choose the compiler at the `GNUmakefile` file. For example, a `gcc` compiler is 
 chosen by `CC = gcc` and for the `openmp` library we set `CFLAGS += -fopenmp`.
 
-2. `$ make`
+2. We compile this library by issuing the command `make`.
 
 3. To link this library to *an evolution code*, one needs to pass the path `-L/path/to/Elliptica_ID_Reader/lib` 
 to the compiler during the compilation of the evolution code. 
