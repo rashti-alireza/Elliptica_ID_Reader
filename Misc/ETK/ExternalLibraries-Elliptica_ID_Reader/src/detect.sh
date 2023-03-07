@@ -60,7 +60,6 @@ then
     fi
 
     # Set locations
-    NAME=Elliptica_ID_Reader
     SRCDIR="$(dirname $0)"
     BUILD_DIR=${SCRATCH_BUILD}/build/${THORN}
     if [ -z "${Elliptica_ID_Reader_INSTALL_DIR}" ]; then
