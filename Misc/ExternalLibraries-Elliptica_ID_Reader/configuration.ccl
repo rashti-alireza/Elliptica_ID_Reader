@@ -1,0 +1,11 @@
+# Configuration definitions for thorn Elliptica_ID_Reader
+
+PROVIDES Elliptica_ID_Reader
+{
+  SCRIPT src/detect.sh
+  LANG bash
+  OPTIONS Elliptica_ID_Reader_DIR Elliptica_ID_Reader_INSTALL_DIR
+}
+
+REQUIRES Elliptica_ID_Reader
+

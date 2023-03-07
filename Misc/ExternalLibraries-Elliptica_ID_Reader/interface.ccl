@@ -1,0 +1,9 @@
+# Interface definition for thorn Elliptica_ID_Reader
+## The variables and functions, among others, that are defined here can be used 
+## by other thorns.
+
+IMPLEMENTS: Elliptica_ID_Reader
+
+
+
+

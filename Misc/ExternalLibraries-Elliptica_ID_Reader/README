@@ -1,0 +1,14 @@
+Cactus Code Thorn Elliptica Initial Data Reader
+Author(s)    : Alireza Rashti, Pedro Espino, Aviral Prakash
+Maintainer(s): Cactus team
+License      : GPL
+--------------------------------------------------------------------------
+
+1. Purpose
+
+Reading ELLIPTICA's initial data code.
+
+
+ELLIPTICA is an infrastructure to construct the initial data of various astrophysical 
+compact objects, for instance, binary black hole-neutron star and 
+binary neutron star systems (see https://arxiv.org/abs/2109.14511).
