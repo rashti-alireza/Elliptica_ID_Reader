@@ -5,12 +5,11 @@
 ## lib name
 LIBNAME = elliptica_id_reader
 
-## compiler settings
-CC = gcc
+## compiler settings ('?=' means if not set already)
+CC ?= gcc
+CFLAGS ?= -fopenmp -O3 -std=c99 -pedantic
 
-CFLAGS += -fopenmp
-CFLAGS += -std=c99 -fPIC -pedantic
-CFLAGS += -O3
+LIB_CFLAGS = -fPIC 
 
 ## ---------------------------------------------------------------------- ##
 ## ---------------------------------------------------------------------- ##
@@ -38,7 +37,7 @@ all: $(LIB)
 
 $(OBJD)/%.o: $(SRCD)/%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INC_PARAMS) -c $< -o $@
+	$(CC) $(CFLAGS) $(LIB_CFLAGS) $(INC_PARAMS) -c $< -o $@
 
 $(LIB): $(OBJ)
 	@echo '---'
@@ -48,7 +47,7 @@ $(LIB): $(OBJ)
 	@mkdir -p $(LIBD)
 	
 ## shared lib
-	$(CC) $(CFLAGS) -shared $(OBJ) -o $(LIBD)/lib$(LIBNAME).so
+	$(CC) $(CFLAGS) $(LIB_CFLAGS) -shared $(OBJ) -o $(LIBD)/lib$(LIBNAME).so
 
 ## static lib
 	$(AR) rcs $(LIBD)/lib$(LIBNAME).a $(OBJ)
