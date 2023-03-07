@@ -22,10 +22,10 @@ SRCDIR="$(dirname $0)"
 BUILD_DIR=${SCRATCH_BUILD}/build/${THORN}
 DONE_FILE=${SCRATCH_BUILD}/done/${THORN}
 if [ -z "${Elliptica_ID_Reader_INSTALL_DIR}" ]; then
+    INSTALL_DIR=${SCRATCH_BUILD}/external/${THORN}
     echo "BEGIN MESSAGE"
     echo "Installing Elliptica_ID_Reader in the default ${INSTALL_DIR} directory."
     echo "END MESSAGE"
-    INSTALL_DIR=${SCRATCH_BUILD}/external/${THORN}
 else
     echo "BEGIN MESSAGE"
     echo "Installing Elliptica_ID_Reader into ${Elliptica_ID_Reader_INSTALL_DIR}"
