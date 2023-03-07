@@ -17,7 +17,7 @@ set -e                          # Abort on errors
 # Set locations
 THORN=Elliptica_ID_Reader
 ## this is the name of tarball
-NAME=Elliptica_ID_Reader
+NAME=Elliptica_ID_Reader??
 SRCDIR="$(dirname $0)"
 BUILD_DIR=${SCRATCH_BUILD}/build/${THORN}
 DONE_FILE=${SCRATCH_BUILD}/done/${THORN}
@@ -55,7 +55,8 @@ cd ${NAME}
 ## Elliptica_ID_Reader doesn't need any configuration script
 
 echo "Elliptica_ID_Reader: Building..."
-${MAKE} CC="${CC}" AR="${AR}"
+## NOTE: these vars coming from Cactus
+${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}"
 
 if (( $? )); then
     echo 'BEGIN ERROR'
