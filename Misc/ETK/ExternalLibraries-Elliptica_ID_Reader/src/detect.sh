@@ -33,6 +33,9 @@ THORN=Elliptica_ID_Reader
 # Build
 ################################################################################
 
+## here we set Elliptica_ID_Reader_DIR and INSTALL_DIR vars.
+## NOTE: Elliptica_ID_Reader_INSTALL_DIR var managed by other defaults 
+## setting of Cactus.
 if [ -z "${Elliptica_ID_Reader_DIR}"                                                 \
      -o "$(echo "${Elliptica_ID_Reader_DIR}" | tr '[a-z]' '[A-Z]')" = 'BUILD' ]
 then
@@ -97,7 +100,7 @@ echo "END MAKE_DEFINITION"
 Elliptica_ID_Reader_INC_DIRS="${Elliptica_ID_Reader_DIR}/include"
 Elliptica_ID_Reader_LIB_DIRS="${Elliptica_ID_Reader_DIR}/lib"
 Elliptica_ID_Reader_LIBS="elliptica_id_reader"
-
+## rename things for cactus
 Elliptica_ID_Reader_INC_DIRS="$(${CCTK_HOME}/lib/sbin/strip-incdirs.sh ${Elliptica_ID_Reader_INC_DIRS})"
 Elliptica_ID_Reader_LIB_DIRS="$(${CCTK_HOME}/lib/sbin/strip-libdirs.sh ${Elliptica_ID_Reader_LIB_DIRS})"
 
