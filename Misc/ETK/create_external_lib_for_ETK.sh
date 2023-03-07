@@ -27,17 +27,21 @@ cd ${cactus_repo}
 rm -rf ${thorn}
 
 ## cp ExternalLibraries-Elliptica_ID_Reader from here to cactus
+echo 'cp ...'
 cd ${cactus_repo}
 cp -r ${curdir}/${thorn} ${thorn}
 
 ## cloning
+mkdir -p ${thorn_path}/dist
 cd ${thorn_path}/dist
 git clone --depth=1 ${git_repo}
 cd ${thorn_path}/dist/${lib_name}
-rm -rvf .git
+rm -rf .git
 cd ${thorn_path}/dist
-tar -zvcf ${tarball_name}.tar.gz ${lib_name}
-rm -rvf ${lib_name}
+## note: it extract by this name
+mv ${lib_name} ${tarball_name}
+tar -zcf ${tarball_name}.tar.gz ${tarball_name}
+rm -rf ${lib_name}
 
 ## set vars
 cd ${thorn_path}/src
@@ -45,11 +49,13 @@ cd ${thorn_path}/src
 sed -i -E "s/^NAME=.+/NAME=${tarball_name}/g" build.sh
 
 ## set arrangments(these are compiled by cactus)
+echo 'arranging ...'
 cd ${cactus_arr}
 rm -rf ${lib_name}
 ln -s  ../../repos/ExternalLibraries-${lib_name} ${lib_name}
 
 
+echo "Done! ($?)"
 
 
 

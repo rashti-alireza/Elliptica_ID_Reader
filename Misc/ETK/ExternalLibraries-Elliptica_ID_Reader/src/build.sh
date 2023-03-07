@@ -56,8 +56,10 @@ cd ${NAME}
 
 echo "Elliptica_ID_Reader: Building..."
 ## NOTE: these vars coming from Cactus
-${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}"
-
+(
+    exec >/dev/null # redirect stdout to null to avoid makefile prints
+    ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}"
+)
 if (( $? )); then
     echo 'BEGIN ERROR'
     echo 'Error while building Elliptica_ID_Reader. Aborting.'
