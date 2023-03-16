@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
+##
 ## Creating an external library (thorn) for ETK (Cactus)
 ## Usage: (requires net access and git tool)
 ## $./me /path/to/cactus/dir
+##
+##
+## NOTE: to update the Cactus branch of this repository:
+## checkout the Cactus branch then issue:
+## cp -vr /path/to/cactus/repos/ExternalLibraries-Elliptica_ID_Reader/* /path/to/Elliptica_ID_Reader/
+##
+
 
 if [[ $# -lt 1 ]]
 then
