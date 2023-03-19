@@ -7,6 +7,6 @@
 
 #define STR_LEN_MAX (9999)
 
-void nsns_export_id_generic(Elliptica_ID_Reader_T *const idr);
+void nsns_export_id_generic(void *vp);
 void nsns_set_evo_fields_generic(Grid_T *const grid);
 

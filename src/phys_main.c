@@ -129,12 +129,12 @@ init_physics
     phys->sys  = BHNS;
     phys->ssys = "BHNS";
   }
-  else if (Pcmps("project","NS_NS_initial_data"))
+  else if (Pcmps("project","NS_NS_binary_initial_data"))
   {
     phys->sys  = NSNS;
     phys->ssys = "NSNS";
   }
-  else if (Pcmps("project","BH_BH_initial_data"))
+  else if (Pcmps("project","BH_BH_binary_initial_data"))
   {
     phys->sys  = BHBH;
     phys->ssys = "BHBH";
@@ -160,7 +160,9 @@ init_physics
     phys->ssys = "OBJ_UNDEFINED";/* important to have different name for system */
   }
   else
+  {
     Error0(NO_OPTION);
+  }
   
   switch(type)
   {
@@ -184,9 +186,11 @@ init_physics
         phys->spos = "center";
       }
       else
+      {
         Error0(NO_OPTION);
-        
+      }
     break;
+    
     case NS1:
       phys->ctype = NS;
       phys->stype = "NS1";
@@ -202,9 +206,11 @@ init_physics
         phys->spos = "right";
       }
       else
+      {
         Error0(NO_OPTION);
-      
+      }
     break;
+    
     case NS2:
       phys->ctype = NS;
       phys->stype = "NS2";
@@ -220,9 +226,11 @@ init_physics
         phys->spos = "right";
       }
       else
+      {
         Error0(NO_OPTION);
-      
+      }
     break;
+    
     case BH:
       phys->ctype = BH;
       phys->stype = "BH";
@@ -243,9 +251,11 @@ init_physics
         phys->spos = "center";
       }
       else
+      {
         Error0(NO_OPTION);
-        
+      }
     break;
+    
     case BH1:
       phys->ctype = BH;
       phys->stype = "BH1";
@@ -261,9 +271,11 @@ init_physics
         phys->spos = "right";
       }
       else
+      {
         Error0(NO_OPTION);
-      
+      }
     break;
+    
     case BH2:
       phys->ctype = BH;
       phys->stype = "BH2";
@@ -279,9 +291,11 @@ init_physics
         phys->spos = "right";
       }
       else
+      {
         Error0(NO_OPTION);
-      
+      }
     break;
+
     case SBH:
       phys->ctype = SBH;
       phys->stype = "SBH";
@@ -292,15 +306,23 @@ init_physics
         phys->spos = "center";
       }
       else
+      {
         Error0(NO_OPTION);
-      
+      }
     break;
+    
     case BHNS:
       phys->ctype = BHNS;
       phys->stype = "BHNS";
       phys->pos   = NONE;
-      
     break;
+    
+    case NSNS:
+      phys->ctype = NSNS;
+      phys->stype = "NSNS";
+      phys->pos   = NONE;
+    break;
+    
     default:
       Error0(NO_OPTION);
   }
@@ -386,7 +408,7 @@ const char *phys_autoindex_stype(Physics_T *const phys,
       strchr(stype,'1') || strchr(stype,'2'))
     return stype;
   
-  /* having made sure everything is find now do a simple autoindex
+  /* having assured everything is fine, we now do a simple autoindex.
   // it replaces NS (BH) with NSi (BHi) in which i is the correct index. */
   AssureType(phys->ctype == NS || phys->ctype == BH);
   regex_replace(stype,"(NS|BH)",phys->stype,phys->stemp);

@@ -35,7 +35,6 @@ void nsns_print_physical_system_properties(Physics_T *const phys,
 
 
 Physics_T *nsns_read_physics_from_checkpoint(void);
-void nsns_set_bam_fields(Grid_T *const grid);
 void nsns_analyze(Physics_T *const phys,const int iteration);
 void nsns_solve_equation(Physics_T *const phys);
 

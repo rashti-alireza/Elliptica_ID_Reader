@@ -135,7 +135,11 @@ Elliptica_ID_Reader_T *elliptica_id_reader_init (
 
   // which ID system
   par = parameter_query_from_checkpoint("Project",file);
-  assert(par);
+  if (!par)
+  {
+    Errors("I could not find the parameter name '%s'!","Project");
+  }
+  
   idr->system = dup_s(par->rv);
   // add a project parameter
   idr->set_param("Project",idr->system,idr);
@@ -197,7 +201,10 @@ static double get_param_double_from_checkpoint(
   // read checkpoint file
   file = Fopen(idr->checkpoint_path,"r");
   par  = parameter_query_from_checkpoint(lv,file);
-  assert(par);
+  if (!par)
+  {
+    Errors("I could not find the parameter name '%s'!",lv);
+  }
   ret = strtod(par->rv,0);
   
   // free
@@ -259,13 +266,15 @@ int elliptica_id_reader_interpolate(Elliptica_ID_Reader_T *const idr)
   if (strcmp_i(idr->system,"BH_NS_binary_initial_data") &&
       strcmp_i(idr->option,"generic"))
   {
-    bhns_export_id_generic(idr);
+    Psets(P_"BHNS_export_id","generic");
+    BH_NS_Binary_Initial_Data(idr);
   }
-  /*else if (strcmp_i(idr->system,"NS_NS_binary_initial_data") &&
+  else if (strcmp_i(idr->system,"NS_NS_binary_initial_data") &&
            strcmp_i(idr->option,"generic"))
   {
-    nsns_export_id_generic(idr);
-  }*/
+    Psets(P_"NSNS_export_id","generic");
+    NS_NS_Binary_Initial_Data(idr);
+  }
   else
   {
     Error1(NO_OPTION);
