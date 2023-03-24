@@ -49,7 +49,7 @@ cd ${thorn_path}/dist
 ## note: it extract by this name
 mv ${lib_name} ${tarball_name}
 tar -zcf ${tarball_name}.tar.gz ${tarball_name}
-rm -rf ${lib_name}
+rm -rf ${tarball_name}
 
 ## set vars
 cd ${thorn_path}/src
