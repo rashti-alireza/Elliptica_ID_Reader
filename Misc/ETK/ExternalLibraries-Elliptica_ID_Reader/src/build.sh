@@ -58,7 +58,7 @@ echo "Elliptica_ID_Reader: Building..."
 ## NOTE: these vars coming from Cactus
 (
 ##    exec >/dev/null # redirect stdout to null to avoid makefile prints
-    ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}"
+    ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}" LIB_TYPE="static"
 )
 if (( $? )); then
     echo 'BEGIN ERROR'
