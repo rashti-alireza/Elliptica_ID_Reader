@@ -57,7 +57,7 @@ cd ${NAME}
 echo "Elliptica_ID_Reader: Building..."
 ## NOTE: these vars coming from Cactus
 (
-    exec >/dev/null # redirect stdout to null to avoid makefile prints
+##    exec >/dev/null # redirect stdout to null to avoid makefile prints
     ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" AR="${AR}"
 )
 if (( $? )); then
