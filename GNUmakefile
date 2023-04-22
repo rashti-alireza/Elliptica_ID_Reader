@@ -54,7 +54,7 @@ $(LIB): $(OBJ)
 
 ## cp header
 	@mkdir -p $(INCD)
-	@cp -u $(SRCD)/elliptica_id_reader_lib.h $(INCD)
+	@cp $(SRCD)/elliptica_id_reader_lib.h $(INCD)
 	
 clean:
 	@echo '---'
