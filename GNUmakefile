@@ -75,7 +75,6 @@ $(LIBD)/lib$(LIBNAME).a: $(OBJ)
 ## static lib
 	@mkdir -p $(LIBD)
 	$(AR) rcs $(LIB) $(OBJ)
-	@chmod 775 $(LIB)
 
 ## remove installation
 clean:
