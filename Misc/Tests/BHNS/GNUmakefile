@@ -16,7 +16,7 @@ LIB_NAME = -lelliptica_id_reader
 
 .PHONY: clean from_code from_reader
 
-## use id reader lib from the elliptica code we furthere need umfpack
+## use id reader lib from the elliptica code we further need umfpack
 from_code:
 	$(CC) -o $(EXE) $(CFLAGS) $(SRC) -I$(INC_DIRS_V1) -L$(LIB_DIRS_V1) \
 	$(LIB_NAME) -Wl,-rpath,$(LIB_DIRS_V1) -lumfpack -lm
