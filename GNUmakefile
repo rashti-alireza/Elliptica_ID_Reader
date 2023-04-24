@@ -8,6 +8,9 @@ LIBNAME = elliptica_id_reader
 ## compiler settings ('?=' means if not set already)
 CC ?= gcc
 CFLAGS ?= -fopenmp -O3 -std=c99 -pedantic
+
+DFLAGS =  -DPragma_OpenMP_2d -DPragma_OpenMP_1d -DPragma_OpenMP_Patch 
+DFLAGS += -DINLINE_FUNC -DCCS_READER_OPTIMIZE
 LIB_CFLAGS = -fPIC 
 
 ## Creating a static or dynamic library. Note you can make both lib. types by 
@@ -50,7 +53,7 @@ all: $(LIB)
 
 $(OBJD)/%.o: $(SRCD)/%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(LIB_CFLAGS) $(INC_PARAMS) -c $< -o $@
+	$(CC) $(CFLAGS) $(DFLAGS) $(LIB_CFLAGS) $(INC_PARAMS) -c $< -o $@
 
 ## only a dynamic lib ##
 $(LIBD)/lib$(LIBNAME).so: $(OBJ)
@@ -62,7 +65,7 @@ $(LIBD)/lib$(LIBNAME).so: $(OBJ)
 	@cp $(SRCD)/elliptica_id_reader_lib.h $(INCD)
 ## shared lib
 	@mkdir -p $(LIBD)
-	$(CC) $(CFLAGS) $(LIB_CFLAGS) -shared $(OBJ) -o $(LIB)
+	$(CC) $(CFLAGS) $(DFLAGS) $(LIB_CFLAGS) -shared $(OBJ) -o $(LIB)
 
 ## only a static lib ##
 $(LIBD)/lib$(LIBNAME).a: $(OBJ)
