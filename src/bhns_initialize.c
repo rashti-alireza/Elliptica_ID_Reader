@@ -241,7 +241,7 @@ static void
   FUNC_TIC
   
   /* a new grid */
-  Grid_T *const grid = alloc_grid();
+  Grid_T *const grid = elliptica_alloc_grid();
   const double bh_box_len_ratio = 0.2;/* experimentally */
   const double ns_box_len_ratio = 0.2;/* experimentally */
   int update_ns_surface = 1;

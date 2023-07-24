@@ -416,7 +416,7 @@ static void alloc_db(struct checkpoint_header *const alloc_info)
   
   /* allocate grid */
   free_grid_db();
-  grid       = alloc_grid();
+  grid       = elliptica_alloc_grid();
   grid->gn   = grid_number;
   //grid->np   = npatch;
   grid->kind = set_grid_kind(alloc_info->grid_kind);

@@ -349,7 +349,7 @@ void free_physics(Physics_T *phys)
     if (phys->IsThisParent)
     {
       free_grid_params(phys->grid);
-      free_grid(phys->grid);
+      elliptica_free_grid(phys->grid);
     }
     
     free(phys);

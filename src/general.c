@@ -88,7 +88,7 @@ long double root_square_long(const long Uint n, const double *const v2, const do
 /* taking dot product of two v1 and v2 vector with n components
 // ->return value : v2.v1
 */
-double dot(const Uint n, const double *const v2,const double *const v1)
+double elliptica_dot(const Uint n, const double *const v2,const double *const v1)
 {
   Uint i;
   double d = 0;

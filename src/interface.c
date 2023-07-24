@@ -2688,7 +2688,7 @@ static void fill_adjPnt(PointSet_T *const pnt,const Uint N)
         adjPnt->fs[i].N2[0] = N2[0];
         adjPnt->fs[i].N2[1] = N2[1];
         adjPnt->fs[i].N2[2] = N2[2];
-        adjPnt->fs[i].N1dotN2 = dot(3,pnt->Pnt->N,N2);
+        adjPnt->fs[i].N1dotN2 = elliptica_dot(3,pnt->Pnt->N,N2);
         
         if (EQL(adjPnt->fs[i].N1dotN2,-1)) 
           adjPnt->fs[i].FitFlg  = 1;
@@ -3103,7 +3103,7 @@ find_adjacent_scs
         for (adjfn = 0; adjfn < NFaces; ++adjfn)
         {
           N1dotN2 = 
-            dot(3,adjpatch->interface[adjfn]->centerN,centerN);
+            elliptica_dot(3,adjpatch->interface[adjfn]->centerN,centerN);
           double fabsdif = fabs(N1dotN2-idealN1N2);
           if (min > fabsdif)
           {
@@ -3263,7 +3263,7 @@ find_adjacent_scs
                   continue;
                   
                 N1dotN2 = 
-                  dot(3,centerN,adjpatch->interface[adjfn]->centerN);
+                  elliptica_dot(3,centerN,adjpatch->interface[adjfn]->centerN);
                 double fabsdif = fabs(N1dotN2-idealN1N2);
                 
                 if (min > fabsdif)

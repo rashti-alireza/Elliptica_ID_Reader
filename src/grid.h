@@ -37,9 +37,9 @@ void free_temp_patch(Patch_T *const patch);
 static char *coord_sys_str(const Patch_T *const patch,char *const str);
 static char *bases_str(const Patch_T *const patch,char *const str);
 static char *collocation_str(const Patch_T *const patch,char *const str);
-void *alloc_grid(void);
+void *elliptica_alloc_grid(void);
 void alloc_patches(Grid_T *const grid);
-void free_grid(Grid_T *grid);
+void elliptica_free_grid(Grid_T *grid);
 void free_patch(Patch_T *patch);
 void free_grid_params(const Grid_T *const grid);
 

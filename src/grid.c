@@ -198,7 +198,7 @@ void free_grid_db(void)
   while (grids_global != 0 && grids_global[i] != 0)
   {
     Grid_T *grid = grids_global[i];
-    free_grid(grid);/* since the last grid goes to i = 0, 
+    elliptica_free_grid(grid);/* since the last grid goes to i = 0, 
                     // don't increament i */          
   }
   
@@ -211,7 +211,7 @@ void free_grid_db(void)
 // furthermore, the end of grids_global is determined by NULL.
 // ->return value: a new grid
 */
-void *alloc_grid(void)
+void *elliptica_alloc_grid(void)
 {
   Uint i;
   
@@ -265,7 +265,7 @@ void alloc_patches(Grid_T *const grid)
 }
 
 /* free the given grid completely */
-void free_grid(Grid_T *grid)
+void elliptica_free_grid(Grid_T *grid)
 {
   Uint p,i,ng;
   
