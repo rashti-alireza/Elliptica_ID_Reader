@@ -1,7 +1,7 @@
 # Main make.code.defn file for thorn Elliptica BHNS
 
 # Source files in this directory
-SRCS = util.cpp util.hpp init_binary.cpp
+SRCS = util.cc init_binary.cc
 
 # Subdirectories containing source files
 SUBDIRS = 
