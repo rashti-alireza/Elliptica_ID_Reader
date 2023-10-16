@@ -1,4 +1,4 @@
-#include "util.hpp"
+#include "util.hh"
 
 /***************************************************************************/
 /* Routine that locates nearest grid point for a given value.              */
