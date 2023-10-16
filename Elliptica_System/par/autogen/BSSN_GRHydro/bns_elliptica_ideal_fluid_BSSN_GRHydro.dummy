@@ -49,7 +49,7 @@ ADMBase::initial_dtshift = "zero"
 
 Elliptica_System::poly_K            = @poly_k@
 Elliptica_System::poly_gamma        = @poly_gamma@
-Elliptica_System::ID_type           = "BNS"
+Elliptica_System::ID_type           = "NSNS"
 Elliptica_System::Elliptica_id_file = "@id_path@"
 
 ## ---------------------------------------------------------------------- ##
