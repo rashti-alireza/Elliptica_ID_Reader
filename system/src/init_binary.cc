@@ -4,7 +4,7 @@
 
 // Auxiliary variables for interepolating Beta equilibrium table
 
-void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
+void Elliptica_load_initial_data(CCTK_ARGUMENTS)
 {
   DECLARE_CCTK_ARGUMENTS;
   DECLARE_CCTK_PARAMETERS;
@@ -15,7 +15,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
 
   if (verbose)
   {
-    CCTK_INFO("Entering Elliptica_BHNS_initialize");
+    CCTK_INFO("Entering Elliptica_load_initial_data");
   }
 
   if (init_real)
@@ -276,7 +276,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
 
   if (verbose)
   {
-    CCTK_INFO("Exiting Elliptica_BHNS_initialize");
+    CCTK_INFO("Exiting Elliptica_load_initial_data");
   }
 }
 

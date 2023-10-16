@@ -7,7 +7,7 @@ if (CCTK_EQUALS (initial_data,    "Elliptica") ||
     CCTK_EQUALS (initial_dtshift, "Elliptica") ||
     CCTK_EQUALS (initial_hydro,   "Elliptica"))
 {
-  SCHEDULE Elliptica_BHNS_initialize IN HydroBase_Initial
+  SCHEDULE Elliptica_load_initial_data IN HydroBase_Initial
   {
     LANG: C
     OPTIONS: LOCAL
