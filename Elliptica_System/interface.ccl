@@ -2,7 +2,7 @@
 # $Header:$
 
 IMPLEMENTS: Elliptica_System
-INHERITS: grid SummationByParts ADMBase HydroBase EOS_Omni Elliptica_Base
+INHERITS: grid SummationByParts ADMBase HydroBase EOS_Omni
 
 SUBROUTINE Diff_gv (CCTK_POINTER_TO_CONST IN cctkGH, \
                     CCTK_INT IN dir, \
