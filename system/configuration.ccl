@@ -1,4 +1,4 @@
-# Configuration definition for thorn Elliptica BHNS ID
+# Configuration definition for thorn Elliptica ID reader.
 
 PROVIDES Elliptica
 {
