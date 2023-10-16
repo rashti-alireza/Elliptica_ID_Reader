@@ -1,0 +1,2 @@
+# to update the dist issue this in ./dist
+git clone --depth=1 git@github.com:rashti-alireza/Elliptica_ID_Reader.git
