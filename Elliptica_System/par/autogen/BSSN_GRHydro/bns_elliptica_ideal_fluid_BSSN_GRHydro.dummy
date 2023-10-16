@@ -9,7 +9,7 @@
 ## Thorns ##
 ############
 
-ActiveThorns = "Elliptica"
+ActiveThorns = "Elliptica_System"
 ActiveThorns = "EOS_Omni"
 ActiveThorns = "ML_BSSN ML_BSSN_Helper ML_ADMConstraints"
 ActiveThorns = "GRHydro ADMbase ADMcoupling ADMmacros CoordGauge StaticConformal"
@@ -47,17 +47,17 @@ ADMBase::initial_shift   = "zero"
 ADMBase::initial_dtlapse = "Elliptica"
 ADMBase::initial_dtshift = "zero"
 
-Elliptica::poly_K            = @poly_k@
-Elliptica::poly_gamma        = @poly_gamma@
-Elliptica::ID_type           = "BNS"
-Elliptica::Elliptica_id_file = "@id_path@"
+Elliptica_System::poly_K            = @poly_k@
+Elliptica_System::poly_gamma        = @poly_gamma@
+Elliptica_System::ID_type           = "BNS"
+Elliptica_System::Elliptica_id_file = "@id_path@"
 
 ## ---------------------------------------------------------------------- ##
 #########
 ## EOS ##
 #########
 
-Elliptica::eos_table = "Ideal_Fluid"
+Elliptica_System::eos_table = "Ideal_Fluid"
 EOS_Omni::poly_K     = @poly_k@
 EOS_Omni::poly_Gamma = @poly_gamma@
 

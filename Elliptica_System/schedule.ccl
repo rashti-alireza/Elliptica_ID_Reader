@@ -1,4 +1,4 @@
-# Schedule definitions for thorn Elliptica
+# Schedule definitions for thorn Elliptica_System
 
 if (CCTK_EQUALS (initial_data,    "Elliptica") ||
     CCTK_EQUALS (initial_lapse,   "Elliptica") ||
