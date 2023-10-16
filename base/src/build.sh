@@ -49,9 +49,10 @@ mkdir ${BUILD_DIR} ${INSTALL_DIR}
 #echo "Elliptica_ID_Reader: Unpacking archive..."
 pushd ${BUILD_DIR}
 #${TAR?} xzf ${SRCDIR}/../dist/${NAME}.tar.gz
-
-echo "Elliptica_ID_Reader: Configuring..."
+cp -r "${SRCDIR}/../dist/${NAME}" .
 cd ${NAME}
+
+#echo "Elliptica_ID_Reader: Configuring..."
 ## Elliptica_ID_Reader doesn't need any configuration script
 
 echo "Elliptica_ID_Reader: Building..."
