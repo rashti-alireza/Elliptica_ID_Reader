@@ -737,8 +737,8 @@ ctgamma/CTGRadiativeBC
 !REPO_BRANCH = Cactus
 !REPO_PATH = $2
 !CHECKOUT = 
-Elliptica_ID_Reader/base
-Elliptica_ID_Reader/system
+Elliptica_ID_Reader/Elliptica_Base
+Elliptica_ID_Reader/Elliptica_System
 
 ## NS tracker (if breaks at arrangement linking, do it by hand )
 !TARGET   = $ARR
