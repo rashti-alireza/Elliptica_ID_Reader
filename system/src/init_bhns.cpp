@@ -60,13 +60,13 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
   //   CHECKING FILE NAME EXISTENCE
   // --------------------------------------------------------------
   FILE *file;
-  if ((file = fopen(Elliptica_bhns_file, "r")) != NULL)
+  if ((file = fopen(Elliptica_id_file, "r")) != NULL)
     fclose(file);
   else
   {
     CCTK_VError(
       __LINE__, __FILE__, CCTK_THORNSTRING,
-      "File \"%s\" does not exist. ABORTING", Elliptica_bhns_file);
+      "File \"%s\" does not exist. ABORTING", Elliptica_id_file);
   }
   // when using EOS, check for EOS file.
   //if (strlen(eos_table_filepath) > 0) {
@@ -76,13 +76,13 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
   //  }
   //}
 
-  CCTK_VInfo(CCTK_THORNSTRING, "Reading from file \"%s\"", Elliptica_bhns_file);
+  CCTK_VInfo(CCTK_THORNSTRING, "Reading from file \"%s\"", Elliptica_id_file);
 
   try
   {
     CCTK_VInfo(CCTK_THORNSTRING, "Calling Elliptica_ID_Reader_T");
     Elliptica_ID_Reader_T *idr =
-      elliptica_id_reader_init(Elliptica_bhns_file, Elliptica_bhns_option);
+      elliptica_id_reader_init(Elliptica_id_file, Elliptica_bhns_option);
     CCTK_REAL K     = poly_K;     // make sure ths is in polytropic units
     CCTK_REAL Gamma = poly_gamma; // make sure ths is in polytropic units
     idr->ifields =
@@ -255,7 +255,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
   {
     CCTK_VWarn(
       CCTK_WARN_ABORT, __LINE__, __FILE__, CCTK_THORNSTRING,
-      "Could not read initial data from file '%s': %s", Elliptica_bhns_file,
+      "Could not read initial data from file '%s': %s", Elliptica_id_file,
       e.what());
   }
 
