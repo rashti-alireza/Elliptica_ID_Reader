@@ -16,12 +16,12 @@ void eid_huntloc(CCTK_REAL xx[], CCTK_INT n, CCTK_REAL x, CCTK_INT *jlo)
   else
   {
     inc = 1;
-    if (x >= xx[*jlo] == ascnd)
+    if ((x >= xx[*jlo]) == ascnd)
     {
       if (*jlo == n)
         return;
       jhi = (*jlo) + 1;
-      while (x >= xx[jhi] == ascnd)
+      while ((x >= xx[jhi]) == ascnd)
       {
         *jlo = jhi;
         inc += inc;
@@ -42,7 +42,7 @@ void eid_huntloc(CCTK_REAL xx[], CCTK_INT n, CCTK_REAL x, CCTK_INT *jlo)
       }
       jhi = (*jlo);
       *jlo -= 1;
-      while (x < xx[*jlo] == ascnd)
+      while ((x < xx[*jlo]) == ascnd)
       {
         jhi = (*jlo);
         inc += inc;
@@ -58,7 +58,7 @@ void eid_huntloc(CCTK_REAL xx[], CCTK_INT n, CCTK_REAL x, CCTK_INT *jlo)
   while (jhi - (*jlo) != 1)
   {
     jm = (jhi + (*jlo)) >> 1;
-    if (x > xx[jm] == ascnd)
+    if ((x > xx[jm]) == ascnd)
       *jlo = jm;
     else
       jhi = jm;
