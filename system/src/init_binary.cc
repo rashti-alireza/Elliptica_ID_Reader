@@ -99,7 +99,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
     Omega = idr->get_param_dbl("BHNS_angular_velocity", idr);
     idr->set_param("BH_filler_method", BH_filler_method, idr);
   }
-  else if ID_type == "NSNS")
+  else if (ID_type == "NSNS")
   {
     Omega = idr->get_param_dbl("NSNS_angular_velocity", idr);
   }
@@ -133,7 +133,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
 
   const int iell_grhd_rho  = idr->indx("grhd_rho");
   const int iell_grhd_epsl = idr->indx("grhd_epsl");
-  const int iell_grhd_p    = idr->indx("grhd_p");
+  //const int iell_grhd_p    = idr->indx("grhd_p");
   const int iell_grhd_vx   = idr->indx("grhd_vx");
   const int iell_grhd_vy   = idr->indx("grhd_vy");
   const int iell_grhd_vz   = idr->indx("grhd_vz");
@@ -277,3 +277,4 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
     CCTK_INFO("Exiting Elliptica_BHNS_initialize");
   }
 }
+
