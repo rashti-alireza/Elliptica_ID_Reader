@@ -1,6 +1,6 @@
 /* (c) 2023 Pedro Espino & Alireza Rashti */
 
-#include "util.hpp"
+#include "util.hh"
 
 // Auxiliary variables for interepolating Beta equilibrium table
 
