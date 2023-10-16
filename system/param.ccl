@@ -49,10 +49,11 @@ EXTENDS keyword initial_Y_e
 
 private:
 
-STRING ID_type "type of system to consider"
+CCTK_STRING ID_type "type of system to consider"
 {
-  "" :: "BHNS, BNS"
-} "BHNS"
+  "BHNS" :: "BH-NS system"
+  "NSNS" :: "NS-NS system"
+} "NSNS"
 
 BOOLEAN verbose "Flags a message upon entry to and exit from a subroutine"
 {

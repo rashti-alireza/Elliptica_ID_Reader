@@ -94,20 +94,22 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
   idr->set_param("ADM_B1I_form", "zero", idr);
   CCTK_REAL Omega = 0.0;
   
-  if (ID_type == "BHNS")
+  if (CCTK_EQUALS(ID_type,"BHNS"))
   {
+    CCTK_INFO("Elliptica BHNS system selected.");
     Omega = idr->get_param_dbl("BHNS_angular_velocity", idr);
     idr->set_param("BH_filler_method", BH_filler_method, idr);
   }
-  else if (ID_type == "NSNS")
+  else if (CCTK_EQUALS(ID_type,"NSNS"))
   {
+    CCTK_INFO("Elliptica NSNS system selected.");
     Omega = idr->get_param_dbl("NSNS_angular_velocity", idr);
   }
   else
   {
     CCTK_VError(
       __LINE__, __FILE__, CCTK_THORNSTRING,
-      "could not find the ID type '%s'.",ID_type);
+      "No such ID type '%s'.",ID_type);
   }
 
   elliptica_id_reader_interpolate(idr);
