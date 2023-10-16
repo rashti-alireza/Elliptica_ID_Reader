@@ -7,44 +7,44 @@ USES CCTK_STRING out_dir
 shares: ADMBase
 EXTENDS keyword initial_data
 { 
-  "Elliptica" :: "BHNS Initial data from Elliptica"
+  "Elliptica" :: "Initial data from Elliptica"
 }
 
 EXTENDS keyword initial_lapse
 { 
-  "Elliptica" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "Initial lapse from Elliptica"
 }
 
 EXTENDS keyword initial_shift
 { 
-  "Elliptica" :: "BHNS Initial shift from Elliptica"
+  "Elliptica" :: "Initial shift from Elliptica"
 }
 
 EXTENDS keyword initial_dtlapse
 { 
-  "Elliptica" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "Initial lapse from Elliptica"
 }
 
 EXTENDS keyword initial_dtshift
 { 
-  "Elliptica" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "Initial lapse from Elliptica"
 }
 
 shares: HydroBase
 
 EXTENDS keyword initial_hydro
 {
-  "Elliptica" :: "BHNS Initial hydro from Elliptica"
+  "Elliptica" :: "Initial hydro from Elliptica"
 }
 
 EXTENDS keyword initial_temperature
 {
-  "Elliptica" :: "BHNS Initial temperature from Elliptica"
+  "Elliptica" :: "Initial temperature from Elliptica"
 }
 
 EXTENDS keyword initial_Y_e
 {
-  "Elliptica" :: "BHNS Initial Y_e from Elliptica"
+  "Elliptica" :: "Initial Y_e from Elliptica"
 }
 
 private:
@@ -63,11 +63,6 @@ CCTK_STRING Elliptica_id_file "File containing Elliptica initial data" STEERABLE
   ".+" :: "Pathname"
 } "checkpoint.dat"
 
-CCTK_STRING Elliptica_bhns_option "additional option for BHNS reader" STEERABLE=recover
-{
-  "generic" :: "entails generic assumptions to interpolate fields "
-} "generic"
-
 CCTK_STRING BH_filler_method "Set the method for filling the BH" STEERABLE=recover
 {
   "none"                  :: "no filling"
@@ -82,19 +77,19 @@ STRING eos_table "Initial data EOS identifyer"
 
 STRING eos_table_filepath "Directory containing the EOS file used to generate the initial data"
 {
-  "" :: "Directory name, default (empty string) is 'do not tell Lorene to overwrite info found in Lorene TODO?'"
+  "" :: "Directory name, default (empty string) is 'do not tell Elliptica to overwrite info found in Elliptica'"
 } ""
 
 STRING beta_file "Directory containing the beta-equilibrium Ye(rho) function -- rho is in cgs"
 {
-  "" :: "Directory name, default (empty string) is 'do not tell Lorene to overwrite info found in Lorene data TODO?'"
+  "" :: "Directory name, default (empty string) is 'do not tell Elliptica to overwrite info found in Elliptica'"
 } ""
 
 BOOLEAN init_real "are you initializing realistic ID?"
 {
 } "no"
 
-BOOLEAN recalculate_eps "Should eps be recalculated (default), or taken from Lorene data? TODO?"
+BOOLEAN recalculate_eps "Should eps be recalculated (default), or taken from ELLIPTICA?"
 {
 } "yes"
 
