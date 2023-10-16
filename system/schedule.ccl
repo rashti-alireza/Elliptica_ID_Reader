@@ -1,11 +1,11 @@
-# Schedule definitions for thorn Elliptica_BHNS
+# Schedule definitions for thorn Elliptica
 
-if (CCTK_EQUALS (initial_data,    "Elliptica_BHNS") ||
-    CCTK_EQUALS (initial_lapse,   "Elliptica_BHNS") ||
-    CCTK_EQUALS (initial_shift,   "Elliptica_BHNS") ||
-    CCTK_EQUALS (initial_dtlapse, "Elliptica_BHNS") ||
-    CCTK_EQUALS (initial_dtshift, "Elliptica_BHNS") ||
-    CCTK_EQUALS (initial_hydro,   "Elliptica_BHNS"))
+if (CCTK_EQUALS (initial_data,    "Elliptica") ||
+    CCTK_EQUALS (initial_lapse,   "Elliptica") ||
+    CCTK_EQUALS (initial_shift,   "Elliptica") ||
+    CCTK_EQUALS (initial_dtlapse, "Elliptica") ||
+    CCTK_EQUALS (initial_dtshift, "Elliptica") ||
+    CCTK_EQUALS (initial_hydro,   "Elliptica"))
 {
   SCHEDULE Elliptica_BHNS_initialize IN HydroBase_Initial
   {

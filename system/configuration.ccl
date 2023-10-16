@@ -1,6 +1,6 @@
 # Configuration definition for thorn Elliptica BHNS ID
 
-PROVIDES Elliptica_BHNS
+PROVIDES Elliptica
 {
   SCRIPT src/build.sh
   LANG bash

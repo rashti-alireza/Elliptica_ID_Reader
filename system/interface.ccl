@@ -1,7 +1,7 @@
-# Interface definition for the thorn Elliptica_BHNS
+# Interface definition for the thorn Elliptica
 # $Header:$
 
-IMPLEMENTS: Elliptica_BHNS
+IMPLEMENTS: Elliptica
 INHERITS: grid SummationByParts ADMBase HydroBase EOS_Omni Elliptica_ID_Reader
 
 CCTK_REAL coords_uElliptica type = GF Timelevels = 1 tags='Prolongation = "None" checkpoint = "no"'

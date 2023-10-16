@@ -9,7 +9,7 @@
 ## Thorns ##
 ############
 
-ActiveThorns = "Elliptica_BHNS"
+ActiveThorns = "Elliptica"
 ActiveThorns = "EOS_Omni"
 ActiveThorns = "ML_BSSN ML_BSSN_Helper ML_ADMConstraints"
 ActiveThorns = "GRHydro ADMbase ADMcoupling ADMmacros CoordGauge StaticConformal"
@@ -40,25 +40,25 @@ ActiveThorns = "NaNChecker TerminationTrigger Trigger TimerReport"
 ## ID ##
 ########
 
-HydroBase::initial_hydro = "Elliptica_BHNS"
-ADMBase::initial_data    = "Elliptica_BHNS"
-ADMBase::initial_lapse   = "Elliptica_BHNS"
+HydroBase::initial_hydro = "Elliptica"
+ADMBase::initial_data    = "Elliptica"
+ADMBase::initial_lapse   = "Elliptica"
 ADMBase::initial_shift   = "zero"
-ADMBase::initial_dtlapse = "Elliptica_BHNS"
+ADMBase::initial_dtlapse = "Elliptica"
 ADMBase::initial_dtshift = "zero"
 
-Elliptica_BHNS::poly_K                = @poly_k@
-Elliptica_BHNS::poly_gamma            = @poly_gamma@
-#Elliptica_BHNS::ID_type               = "BNS"
-Elliptica_BHNS::Elliptica_bhns_file   = "@id_path@"
-Elliptica_BHNS::Elliptica_bhns_option = "generic"
+Elliptica::poly_K                = @poly_k@
+Elliptica::poly_gamma            = @poly_gamma@
+#Elliptica::ID_type               = "BNS"
+Elliptica::Elliptica_bhns_file   = "@id_path@"
+Elliptica::Elliptica_bhns_option = "generic"
 
 ## ---------------------------------------------------------------------- ##
 #########
 ## EOS ##
 #########
 
-Elliptica_BHNS::eos_table = "Ideal_Fluid"
+Elliptica::eos_table = "Ideal_Fluid"
 EOS_Omni::poly_K          = @poly_k@
 EOS_Omni::poly_Gamma      = @poly_gamma@
 

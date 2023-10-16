@@ -32,10 +32,10 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
   if (!(*init_eos_key = EOS_Omni_GetHandle(eos_table)))
     CCTK_WARN(0, "Cannot get initial eos handle, aborting...");
   CCTK_VInfo(
-    CCTK_THORNSTRING, "Elliptica_BHNS will use the %s equation of state.",
+    CCTK_THORNSTRING, "Elliptica will use the %s equation of state.",
     eos_table);
   CCTK_VInfo(
-    CCTK_THORNSTRING, "Elliptica_BHNS will use the %d eos handle",
+    CCTK_THORNSTRING, "Elliptica will use the %d eos handle",
     *init_eos_key);
 
   //Set up local coordinate arrays
@@ -109,20 +109,20 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
     for (CCTK_INT i = 0; i < N_points; ++i)
     {
 
-      if (CCTK_EQUALS(initial_lapse, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_lapse, "Elliptica"))
       {
         alp[i] = idr->field[idr->indx("alpha")][i];
       }
 
       //TODO: this is modified by a negative sign from LORENE ID. Is that needed here?
-      if (CCTK_EQUALS(initial_shift, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_shift, "Elliptica"))
       {
         betax[i] = idr->field[idr->indx("betax")][i];
         betay[i] = idr->field[idr->indx("betay")][i];
         betaz[i] = idr->field[idr->indx("betaz")][i];
       }
 
-      if (CCTK_EQUALS(initial_data, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_data, "Elliptica"))
       {
         gxx[i] = idr->field[idr->indx("adm_gxx")][i];
         gxy[i] = idr->field[idr->indx("adm_gxy")][i];
@@ -139,7 +139,7 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
         kzz[i] = idr->field[idr->indx("adm_Kzz")][i];
       }
 
-      if (CCTK_EQUALS(initial_data, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_data, "Elliptica"))
       {
         rho[i] = idr->field[idr->indx("grhd_rho")][i];
         //if using a realistic EOS, set the beta equilibrium conditions
@@ -206,9 +206,9 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
     {
       // These initial data assume a helical Killing vector field
 
-      if (CCTK_EQUALS(initial_lapse, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_lapse, "Elliptica"))
       {
-        if (CCTK_EQUALS(initial_dtlapse, "Elliptica_BHNS"))
+        if (CCTK_EQUALS(initial_dtlapse, "Elliptica"))
         {
           CCTK_INFO("Calculating time derivatives of lapse");
           eid_set_dt_from_domega(CCTK_PASS_CTOC, alp, dtalp, Omega);
@@ -225,9 +225,9 @@ void Elliptica_BHNS_initialize(CCTK_ARGUMENTS)
         }
       }
 
-      if (CCTK_EQUALS(initial_shift, "Elliptica_BHNS"))
+      if (CCTK_EQUALS(initial_shift, "Elliptica"))
       {
-        if (CCTK_EQUALS(initial_dtshift, "Elliptica_BHNS"))
+        if (CCTK_EQUALS(initial_dtshift, "Elliptica"))
         {
           CCTK_INFO("Calculating time derivatives of shift");
           eid_set_dt_from_domega(CCTK_PASS_CTOC, betax, dtbetax, Omega);

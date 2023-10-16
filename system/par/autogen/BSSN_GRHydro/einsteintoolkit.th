@@ -761,7 +761,7 @@ ExternalLibraries/Elliptica_ID_Reader
 !REPO_PATH = $2
 !REPO_BRANCH = main
 !CHECKOUT = 
-EllipticaID/Elliptica_BHNS
+EllipticaID/Elliptica
 
 # NS tracker
 !TARGET   = $ARR

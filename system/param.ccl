@@ -7,44 +7,44 @@ USES CCTK_STRING out_dir
 shares: ADMBase
 EXTENDS keyword initial_data
 { 
-  "Elliptica_BHNS" :: "BHNS Initial data from Elliptica"
+  "Elliptica" :: "BHNS Initial data from Elliptica"
 }
 
 EXTENDS keyword initial_lapse
 { 
-  "Elliptica_BHNS" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "BHNS Initial lapse from Elliptica"
 }
 
 EXTENDS keyword initial_shift
 { 
-  "Elliptica_BHNS" :: "BHNS Initial shift from Elliptica"
+  "Elliptica" :: "BHNS Initial shift from Elliptica"
 }
 
 EXTENDS keyword initial_dtlapse
 { 
-  "Elliptica_BHNS" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "BHNS Initial lapse from Elliptica"
 }
 
 EXTENDS keyword initial_dtshift
 { 
-  "Elliptica_BHNS" :: "BHNS Initial lapse from Elliptica"
+  "Elliptica" :: "BHNS Initial lapse from Elliptica"
 }
 
 shares: HydroBase
 
 EXTENDS keyword initial_hydro
 {
-  "Elliptica_BHNS" :: "BHNS Initial hydro from Elliptica"
+  "Elliptica" :: "BHNS Initial hydro from Elliptica"
 }
 
 EXTENDS keyword initial_temperature
 {
-  "Elliptica_BHNS" :: "BHNS Initial temperature from Elliptica"
+  "Elliptica" :: "BHNS Initial temperature from Elliptica"
 }
 
 EXTENDS keyword initial_Y_e
 {
-  "Elliptica_BHNS" :: "BHNS Initial Y_e from Elliptica"
+  "Elliptica" :: "BHNS Initial Y_e from Elliptica"
 }
 
 private:
