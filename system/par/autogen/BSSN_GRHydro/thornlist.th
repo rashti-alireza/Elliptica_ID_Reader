@@ -1,0 +1,9 @@
+# required lib for Elliptica ID reader
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = git@github.com:rashti-alireza/Elliptica_ID_Reader.git
+!REPO_BRANCH = Cactus
+!REPO_PATH = $2
+!CHECKOUT = 
+Elliptica_ID_Reader/base
+Elliptica_ID_Reader/system
