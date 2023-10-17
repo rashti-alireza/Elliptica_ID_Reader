@@ -744,8 +744,8 @@ Elliptica_ID_Reader/Elliptica_System
 !TARGET   = $ARR
 !TYPE     = git
 !URL      = git@bitbucket.org:knarrff/nstracker.git
-!REPO_PATH = $2
-!CHECKOUT = Tracker/NSTracker
+!REPO_PATH = ../$2
+!CHECKOUT = Tracker/nstracker
 
 # Private thorns
 !TARGET   = $ARR
