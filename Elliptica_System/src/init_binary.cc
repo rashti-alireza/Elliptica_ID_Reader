@@ -1,6 +1,7 @@
 /* (c) 2023 Pedro Espino & Alireza Rashti */
 
 #include "util.hh"
+#include <elliptica_id_reader_lib.h>
 
 // Auxiliary variables for interepolating Beta equilibrium table
 

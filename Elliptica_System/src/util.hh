@@ -6,7 +6,6 @@
 #include <cctk_Arguments.h>
 #include <cctk_Parameters.h>
 #include <cstdlib>
-#include <elliptica_id_reader_lib.h>
 #include <stdio.h>
 #include <vector>
 
