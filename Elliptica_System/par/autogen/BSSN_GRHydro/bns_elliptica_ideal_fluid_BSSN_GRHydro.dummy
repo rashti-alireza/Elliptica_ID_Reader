@@ -57,9 +57,10 @@ Elliptica_System::Elliptica_id_file = "@id_path@"
 ## EOS ##
 #########
 
-Elliptica_System::eos_table = "Ideal_Fluid"
-EOS_Omni::poly_K     = @poly_k@
-EOS_Omni::poly_Gamma = @poly_gamma@
+Elliptica_System::eos_table  = "Ideal_Fluid"
+EOS_Omni::gl_gamma           = @poly_gamma@
+EOS_Omni::gl_k               = @poly_k@
+EOS_Omni::poly_gamma_initial = @poly_gamma@
 
 ## ---------------------------------------------------------------------- ##
 ##########
