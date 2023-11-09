@@ -10,7 +10,7 @@ int NS_NS_Binary_Initial_Data(void *vp)
     nsns_export_id_generic(vp);
   else
     Error1(NO_OPTION);
-    
+
   return EXIT_SUCCESS;
 }
 
