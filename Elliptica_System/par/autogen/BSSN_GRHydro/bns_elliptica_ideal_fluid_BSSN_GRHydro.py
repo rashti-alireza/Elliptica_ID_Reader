@@ -149,8 +149,10 @@ def main():
   setd('position_y_2',param_dict['NS2_center_y'])
   
   ## regions
-  ns_r1 = g_ns_expand*ceil(param_dict['NS1_max_radius'])
-  ns_r2 = g_ns_expand*ceil(param_dict['NS2_max_radius'])
+  #ns_r1 = g_ns_expand*ceil(param_dict['NS1_max_radius'])
+  #ns_r2 = g_ns_expand*ceil(param_dict['NS2_max_radius'])
+  ns_r1 = g_ns_expand*(param_dict['NS1_max_radius'])
+  ns_r2 = g_ns_expand*(param_dict['NS2_max_radius'])
   
   ## region1
   setd('2**0*NS_radius1',ns_r1)
